@@ -20,3 +20,9 @@ todo.push('Apply Leave')
 
 console.log(todo)
 
+
+const todo0 = ['Wake up', 'Eat', 'Learn', 'Work', 'Sleep']
+
+todo0.forEach((todo, index) => {
+    console.log((index + 1) + '.', todo);
+});

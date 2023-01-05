@@ -46,3 +46,14 @@ list[2] = 'new list 4'
 
 console.log(list)
 
+
+//forEach Loop
+list.forEach(list => {
+    console.log(list)
+})
+
+
+list.forEach(function(list, index){
+    console.log(list, index)
+})
+
