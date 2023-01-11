@@ -44,21 +44,32 @@ const todos1 = [{
     complete: true
 }, {
     todo: 'Work',
-    complete: true
+    complete: false
 }, {
     todo: 'Sleep',
-    complete: true
+    complete: false
 }]
 
 
-const deleteTodo = function(todos, todoText){
-    const index = todos.findIndex(function (todo) {
-        return todo.todo.toLowerCase() === todoText.toLowerCase()
+// const deleteTodo = function(todos, todoText){
+//     const index = todos.findIndex(function (todo) {
+//         return todo.todo.toLowerCase() === todoText.toLowerCase()
+//     })
+//     if(index > -1){
+//         todos.splice(index, 1)
+//     }
+// }
+
+// deleteTodo(todos1, 'Sleep')
+// console.log(todos1)
+
+
+// Filtering Array
+const getThingsToDo = function (todos){
+    return todos.filter(function (todo){
+        return !todo.complete
     })
-    if(index > -1){
-        todos.splice(index, 1)
-    }
 }
 
-deleteTodo(todos1, 'Sleep')
-console.log(todos1)
+
+console.log(getThingsToDo(todos1))

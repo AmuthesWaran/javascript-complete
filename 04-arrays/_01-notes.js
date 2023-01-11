@@ -144,3 +144,23 @@ const findNote = function (notes, noteTitle){
 
 const note = findNote(notes1, 'To buy')
 console.log(note)
+
+
+// Filtering Array
+const filterNotes = notes1.filter(function (note, index){
+    const isTitleMatch = note.title.toLowerCase().includes('ne')
+    const isBodyMatch = note.body.toLowerCase().includes('ne')
+    return isTitleMatch || isBodyMatch
+})
+
+
+const findNotes = function(notes, query){
+    const filterNotes = notes1.filter(function (note, index){
+        const isTitleMatch = note.title.toLowerCase().includes('ne')
+        const isBodyMatch = note.body.toLowerCase().includes('ne')
+        return isTitleMatch || isBodyMatch
+    })
+    return filterNotes
+}
+
+console.log(findNotes(notes1, 'new'))
