@@ -12,20 +12,20 @@ console.log(`Todo: ${todo[todo.length - 2]}`)
 // Challenge 14
 
 
-console.log(todo.splice(3, 1))
+// console.log(todo.splice(3, 1))
 
-console.log(todo)
+// console.log(todo)
 
-todo.push('Apply Leave')
+// todo.push('Apply Leave')
 
-console.log(todo)
+// console.log(todo)
 
 
-const todo0 = ['Wake up', 'Eat', 'Learn', 'Work', 'Sleep']
+// const todo0 = ['Wake up', 'Eat', 'Learn', 'Work', 'Sleep']
 
-todo0.forEach((todo, index) => {
-    console.log((index + 1) + '.', todo);
-});
+// todo0.forEach((todo, index) => {
+//     console.log((index + 1) + '.', todo);
+// });
 
 // console.log();
 // for (let i = 0; i < todo0.length; i++) {
@@ -65,11 +65,26 @@ const todos1 = [{
 
 
 // Filtering Array
-const getThingsToDo = function (todos){
-    return todos.filter(function (todo){
-        return !todo.complete
+// const getThingsToDo = function (todos){
+//     return todos.filter(function (todo){
+//         return !todo.complete
+//     })
+// }
+
+
+// console.log(getThingsToDo(todos1))
+
+const sortTodos = function (todos) {
+    todos.sort(function (a,b){
+        if (!a.complete && b.complete) {
+            return -1
+        } else if (!b.complete && a.complete) {
+            return 1
+        } else {
+            return 0
+        }
     })
 }
 
-
-console.log(getThingsToDo(todos1))
+sortTodos(todos1)
+console.log(todos1)

@@ -136,31 +136,54 @@ const notes1 = [
 //     }
 // }
 
-const findNote = function (notes, noteTitle){
-    return notes.find(function (note, index){
-        return note.title === noteTitle
-    })
-}
+// const findNote = function (notes, noteTitle){
+//     return notes.find(function (note, index){
+//         return note.title === noteTitle
+//     })
+// }
 
-const note = findNote(notes1, 'To buy')
-console.log(note)
+// const note = findNote(notes1, 'To buy')
+// console.log(note)
 
 
 // Filtering Array
-const filterNotes = notes1.filter(function (note, index){
-    const isTitleMatch = note.title.toLowerCase().includes('ne')
-    const isBodyMatch = note.body.toLowerCase().includes('ne')
-    return isTitleMatch || isBodyMatch
-})
+// const filterNotes = notes1.filter(function (note, index){
+//     const isTitleMatch = note.title.toLowerCase().includes('ne')
+//     const isBodyMatch = note.body.toLowerCase().includes('ne')
+//     return isTitleMatch || isBodyMatch
+// })
 
 
-const findNotes = function(notes, query){
-    const filterNotes = notes1.filter(function (note, index){
-        const isTitleMatch = note.title.toLowerCase().includes('ne')
-        const isBodyMatch = note.body.toLowerCase().includes('ne')
-        return isTitleMatch || isBodyMatch
+// const findNotes = function(notes, query){
+//     const filterNotes = notes1.filter(function (note, index){
+//         const isTitleMatch = note.title.toLowerCase().includes('ne')
+//         const isBodyMatch = note.body.toLowerCase().includes('ne')
+//         return isTitleMatch || isBodyMatch
+//     })
+//     return filterNotes
+// }
+
+console.log(notes1)
+
+// console.log(findNotes(notes1, 'new'))
+
+// Sorting Arrays
+
+const sortNotes = function (notes) {
+    notes.sort(function(a, b) {
+        if(a.title.toLowercase() < b.title.toLowercase() ){
+            return -1
+        }
+        else if(b.title.toLowercase() < a.title.toLowercase()){
+            return 1
+        }
+        else{
+            return 0
+        }
+        
     })
-    return filterNotes
 }
 
-console.log(findNotes(notes1, 'new'))
+
+sortNotes(notes1)
+console.log(notes1)
