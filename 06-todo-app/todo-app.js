@@ -23,18 +23,27 @@ const todos = [{
 //    }
 // })
 
- const incompleteTodo = todos.filter(function (todo){
-   return !todo.complete
- })
+//  const incompleteTodo = todos.filter(function (todo){
+//    return !todo.complete
+//  })
 
- const summary = document.createElement('h2')
- summary.textContent = `You have ${incompleteTodo.length} todos left`
- document.querySelector('body').appendChild(summary)
+//  const summary = document.createElement('h2')
+//  summary.textContent = `You have ${incompleteTodo.length} todos left`
+//  document.querySelector('body').appendChild(summary)
 
- todos.forEach(function (todo) {
-   const p = document.createElement('p')
-   p.textContent = todo.todo
+//  todos.forEach(function (todo) {
+//    const p = document.createElement('p')
+//    p.textContent = todo.todo
    
-   document.querySelector('body').appendChild(p)
-   console.log(p)
- })
+//    document.querySelector('body').appendChild(p)
+//    console.log(p)
+//  })
+
+// document.querySelector('button').addEventListener('click', function(e){
+//    console.log('button clicked');
+// })
+
+
+document.querySelector('#addTodo').addEventListener('click', function(e){
+   console.log('button clicked');
+})
