@@ -47,3 +47,7 @@ const todos = [{
 document.querySelector('#addTodo').addEventListener('click', function(e){
    console.log('button clicked');
 })
+
+document.querySelector('#todoText').addEventListener('input', function(e){
+   console.log(e.target.value)
+})
