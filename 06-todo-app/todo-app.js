@@ -15,6 +15,34 @@ const todos = [{
    complete: false
 }]
 
+const filters ={
+   searchText: ''
+}
+
+const renderTodo = function(todos, filters){
+   const filteredTodo = todos.filter(function (todo){
+      return todo.todo.toLowerCase().includes(filters.searchText.toLowerCase())
+   })
+   const incompleteTodo = filteredTodo.filter(function (todo){
+      return !todo.complete
+    })
+   
+    
+    document.querySelector('#todos').innerHTML = ''
+
+    const summary = document.createElement('h2')
+    summary.textContent = `You have ${incompleteTodo.length} todos left`
+    document.querySelector('#todos').appendChild(summary)
+    
+    filteredTodo.forEach(function (todo) {
+      
+      const p = document.createElement('p')
+      p.textContent = todo.todo
+      
+      document.querySelector('#todos').appendChild(p)
+      console.log(p)
+    })
+}
 // const ps = document.querySelectorAll('p')
 
 // ps.forEach(function (p){
@@ -43,6 +71,7 @@ const todos = [{
 //    console.log('button clicked');
 // })
 
+renderTodo(todos, filters)
 
 document.querySelector('#addTodo').addEventListener('click', function(e){
    console.log('button clicked');
@@ -51,3 +80,10 @@ document.querySelector('#addTodo').addEventListener('click', function(e){
 document.querySelector('#todoText').addEventListener('input', function(e){
    console.log(e.target.value)
 })
+
+document.querySelector('#search-text').addEventListener('input', function(e){
+   filters.searchText = e.target.value
+   renderTodo(todos, filters)
+})
+
+
