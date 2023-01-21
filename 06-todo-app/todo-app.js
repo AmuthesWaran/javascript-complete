@@ -16,13 +16,24 @@ const todos = [{
 }]
 
 const filters ={
-   searchText: ''
+   searchText: '',
+   hideCompleted: false
 }
 
 const renderTodo = function(todos, filters){
-   const filteredTodo = todos.filter(function (todo){
+   let filteredTodo = todos.filter(function (todo){
       return todo.todo.toLowerCase().includes(filters.searchText.toLowerCase())
    })
+
+   filteredTodo = filteredTodo.filter(function (todo){
+      if(filters.hideCompleted){
+         return !todo.complete
+      }
+      else{
+         return true
+      }
+   })
+
    const incompleteTodo = filteredTodo.filter(function (todo){
       return !todo.complete
     })
@@ -73,13 +84,13 @@ const renderTodo = function(todos, filters){
 
 renderTodo(todos, filters)
 
-document.querySelector('#addTodo').addEventListener('click', function(e){
-   console.log('button clicked');
-})
+// document.querySelector('#addTodo').addEventListener('click', function(e){
+//    console.log('button clicked');
+// })
 
-document.querySelector('#todoText').addEventListener('input', function(e){
-   console.log(e.target.value)
-})
+// document.querySelector('#todoText').addEventListener('input', function(e){
+//    console.log(e.target.value)
+// })
 
 document.querySelector('#search-text').addEventListener('input', function(e){
    filters.searchText = e.target.value
@@ -87,3 +98,18 @@ document.querySelector('#search-text').addEventListener('input', function(e){
 })
 
 
+document.querySelector('#new-todo').addEventListener('submit', function(e){
+   e.preventDefault()
+   todos.push({
+      todo: e.target.elements.text.value,
+      complete: false
+   })
+   
+   renderTodo(todos, filters)
+   e.target.elements.text.value = ''
+})
+
+document.querySelector('#hide-completed').addEventListener('change', function(e){
+   filters.hideCompleted = e.target.checked
+   renderTodo(todos, filters)
+})

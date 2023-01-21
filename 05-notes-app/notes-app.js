@@ -74,16 +74,16 @@ document.querySelector('#createNote').addEventListener('click', function(e) {
    e.target.textContent = 'Create Note Clicked'
 })
 
-document.querySelector('#removeNote').addEventListener('click', function(e){
-   e.target.textContent = 'Remove Button Clicked'
-   // console.log('i');
-})
+// document.querySelector('#removeNote').addEventListener('click', function(e){
+//    e.target.textContent = 'Remove Button Clicked'
+//    // console.log('i');
+// })
 
-document.querySelector('#removeAllNote').addEventListener('click', function(e){
-   document.querySelectorAll('.note').forEach(function (note){
-      note.remove()
-   })
-})
+// document.querySelector('#removeAllNote').addEventListener('click', function(e){
+//    document.querySelectorAll('.note').forEach(function (note){
+//       note.remove()
+//    })
+// })
 
 //Examples
 
@@ -104,3 +104,19 @@ document.querySelector('#search-text').addEventListener('input', function(e){
    renderNotes(notes, filters)
 })
 
+
+// document.querySelector('#name-form').addEventListener('submit', function (e) {
+//    e.preventDefault()
+//     let firstName = e.target.elements.firstName.value
+//     console.log(firstName)
+//     e.target.elements.firstName.value = ''
+// })
+
+
+// document.querySelector('#for-fun').addEventListener('change', function(e){
+//    console.log(e.target.checked)
+// })
+
+document.querySelector('#filter-by').addEventListener('change', function(e){
+   console.log(e.target.value)
+})
