@@ -7,6 +7,7 @@ var splittedArray;
 
 var splittedArrayclean = []
 var fnameclean = []
+var lnameclean = []
 
 var outputcsv;
 
@@ -28,20 +29,21 @@ async function getAsText() {
     for (let i = 0; i < splittedArray.length; i++) {
         splittedArrayclean.push(splittedArray[i].trim());
         fnameclean.push(splittedArray[i].trim().split('.')[0])
+        lnameclean.push(splittedArray[i].trim().split('.')[1].split("@")[0])
     }
 
     // console.log(splittedArrayclean)
     // console.log(fnameclean)
     const csvRows = [];
 
-    const headers = ["firstname", "email"];
+    const headers = ["firstname", "lastname", "email"];
 
     csvRows.push(headers.join(","))
 
 
 
     for (let i = 0; i < fnameclean.length; i++) {
-        csvRows.push(fnameclean[i] + "," + splittedArrayclean[i]);
+        csvRows.push(fnameclean[i] + "," + lnameclean[i] + "," + splittedArrayclean[i]);
 
     }
 
