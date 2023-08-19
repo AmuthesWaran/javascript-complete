@@ -1,0 +1,11 @@
+{
+  "name": "school-mark-system",
+  "version": "1.0.0",
+  "description": "Desgin School Simple Mark System using javascript with some node packages",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
