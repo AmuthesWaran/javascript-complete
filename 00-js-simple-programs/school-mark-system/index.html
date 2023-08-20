@@ -20,64 +20,69 @@
 
 <body>
     <div class="container h-100 mt-5">
-        <div class="row">
-            <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 m-auto shadow rounded">
-                <form onsubmit="" method="post">
+        <div class="row col-xl-6 col-lg-6 col-md-8 col-sm-12 m-auto shadow rounded">
+            <div class="">
+                <form onsubmit="calc(event)" method="post" action="#">
                     <h1 class="text-center mb-3">Student Mark Calc</h1>
                     <label for="uid">Student ID</label>
                     <input type="number" name="sid" id="sid" class="form-control mb-4" autofocus required>
 
+
                     <label for="fullname">Full Name</label>
+                    <small id="fullnameErrorMsg"></small>
                     <input type="text" name="fullname" id="fullname" class="form-control mb-4" required>
 
+
                     <label for="emailAddress">Email Address</label>
+                    <small class="text-danger" id="emailErrorMsg"></small>
                     <input type="email" name="emailAddress" id="emailAddress" class="form-control mb-4" required>
+
 
                     <label for="dateOfBirth">DOB</label>
                     <input type="date" name="dateOfBirth" id="dateOfBirth" class="form-control mb-4" required>
                     <div class="container mb-4">
                         <div class="row ">
                             <h5 class="mb-3">Please enter your respective marks</h5>
+                            <small class="text-danger" id="lanErrorMsg"></small>
+                            <small class="text-danger" id="engErrorMsg"></small>
+                            <small class="text-danger" id="mathErrorMsg"></small>
+                            <small class="text-danger" id="sciErrorMsg"></small>
+                            <small class="text-danger" id="socErrorMsg"></small>
                             <div class="col">
-                                <div class="form-floating mb-3">
-                                    <input type="number" class="form-control" placeholder="Lang">
-                                    <label for="floatingInput">Lang</label>
-                                </div>
+                                <label for="language">Lang</label>
+                                <input type="number" class="form-control" id="language" required>
+                            </div>
+
+                            <div class="col">
+                                <label for="english">Eng</label>
+                                <input type="number" class="form-control" id="english" required>
+
                             </div>
                             <div class="col">
-                                <div class="form-floating mb-3">
-                                    <input type="number" class="form-control" placeholder="Eng">
-                                    <label for="floatingInput">Eng</label>
-                                </div>
+                                <label for="math">Math</label>
+                                <input type="number" class="form-control" id="math" required>
                             </div>
                             <div class="col">
-                                <div class="form-floating mb-3">
-                                    <input type="number" class="form-control" placeholder="Math">
-                                    <label for="floatingInput">Math</label>
-                                </div>
+                                <label for="science">Sci</label>
+                                <input type="number" class="form-control" id="science" required>
                             </div>
                             <div class="col">
-                                <div class="form-floating mb-3">
-                                    <input type="number" class="form-control" placeholder="Sci">
-                                    <label for="floatingInput">Sci</label>
-                                </div>
+                                <label for="social">Soc</label>
+                                <input type="number" class="form-control" id="social" required>
+
                             </div>
-                            <div class="col">
-                                <div class="form-floating mb-3">
-                                    <input type="number" class="form-control" placeholder="Soc">
-                                    <label for="floatingInput">Soc</label>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
-                    <div class="h-100 d-flex align-items-center justify-content-center mb-5">
-                        <button class="btn btn-success me-4" type="button" onclick="calc()">Submit</button>
-                        <button class="btn btn-primary me-4" type="button" onclick="Refresh()">Display</button>
-                        <button class="btn btn-warning me-4" type="reset">Reset</button>
-                    </div>
-                </form>
             </div>
+            <div class="h-100 d-flex align-items-center justify-content-center mb-5">
+                <button class="btn btn-success me-4" type="submit">Submit</button>
+                <button class="btn btn-primary me-4" type="button" onclick="Refresh()">Refresh</button>
+                <button class="btn btn-warning me-4" type="reset">Reset</button>
+            </div>
+            </form>
         </div>
+    </div>
     </div>
 </body>
 <script src="./js/index.js"></script>
