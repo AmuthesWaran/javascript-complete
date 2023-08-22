@@ -35,7 +35,7 @@ const calc = (event) => {
         }
 
         allStudents.push(studentData)
-        document.getElementById('successMsg').innerText = "Successfully Upadated"
+        document.getElementById('successMsg').innerText = "Successfully Updated"
 
 
         console.log(studentData);
