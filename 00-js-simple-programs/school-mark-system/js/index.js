@@ -8,8 +8,18 @@ const calc = (event) => {
     if (!vaidateInputs()) {
 
         console.log('Invalid Inputs');
+        document.getElementById('successMsg').innerText = ""
+
 
     } else {
+        document.getElementById('socErrorMsg').innerText = ""
+        document.getElementById('sciErrorMsg').innerText = ""
+        document.getElementById('mathErrorMsg').innerText = ""
+        document.getElementById('engErrorMsg').innerText = ""
+        document.getElementById('lanErrorMsg').innerText = ""
+        document.getElementById('emailErrorMsg').innerText = ""
+        document.getElementById('fullnameErrorMsg').innerText = ""
+
         let studentData = {
             'id': parseInt(document.getElementById('sid').value),
             'fullname': document.getElementById('fullname').value.trim(),
@@ -25,6 +35,8 @@ const calc = (event) => {
         }
 
         allStudents.push(studentData)
+        document.getElementById('successMsg').innerText = "Successfully Upadated"
+
 
         console.log(studentData);
     }
@@ -47,39 +59,59 @@ const vaidateInputs = () => {
     let fullnameRegex = /^[A-Za-z]+(?:\s[A-Za-z]+)*$/
     let emailIdRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
     // Marks should fall between 0 - 100
-    let markRegex = /^(0|[1-9]\d*|100)$/
+    let markRegex = /^(?:100|[0-9]{1,2})$/
 
     console.log(!fullnameRegex.test(document.getElementById('fullname').value));
 
-    if (fullnameRegex.test(document.getElementById('fullname').value.trim())) {
+    if (!fullnameRegex.test(document.getElementById('fullname').value.trim())) {
         document.getElementById('fullnameErrorMsg').innerText = "Do not use Special characters or numbers"
+
+    }
+    else {
+        document.getElementById('fullnameErrorMsg').innerText = ""
     }
 
-    if (emailIdRegex.test(document.getElementById('emailAddress').value.trim())) {
+    if (!emailIdRegex.test(document.getElementById('emailAddress').value.trim())) {
         document.getElementById('emailErrorMsg').innerText = "Please enter a valid emailId"
     }
-
-    if (markRegex.test(document.getElementById('language').value)) {
-        document.getElementById('lanErrorMsg').innerText = "Please enter marks between 0 - 100"
-        console.log("hello");
-
+    else {
+        document.getElementById('emailErrorMsg').innerText = ""
     }
 
-    if (markRegex.test(document.getElementById('english').value)) {
-        document.getElementById('engErrorMsg').innerText = "Please enter marks between 0 - 100"
-
+    if (!markRegex.test(document.getElementById('language').value)) {
+        document.getElementById('lanErrorMsg').innerText = "Please enter language marks between 0 - 100"
+    }
+    else {
+        document.getElementById('lanErrorMsg').innerText = ""
     }
 
-    if (markRegex.test(document.getElementById('math').value)) {
-        document.getElementById('mathErrorMsg').innerText = "Please enter marks between 0 - 100"
+    if (!markRegex.test(document.getElementById('english').value)) {
+        document.getElementById('engErrorMsg').innerText = "Please enter english marks between 0 - 100"
+
+    }
+    else {
+        document.getElementById('engErrorMsg').innerText = ""
     }
 
-    if (markRegex.test(document.getElementById('science').value)) {
-        document.getElementById('sciErrorMsg').innerText = "Please enter marks between 0 - 100"
+    if (!markRegex.test(document.getElementById('math').value)) {
+        document.getElementById('mathErrorMsg').innerText = "Please enter math marks between 0 - 100"
+    }
+    else {
+        document.getElementById('mathErrorMsg').innerText = ""
     }
 
-    if (markRegex.test(document.getElementById('social').value)) {
-        document.getElementById('socErrorMsg').innerText = "Please enter marks between 0 - 100"
+    if (!markRegex.test(document.getElementById('science').value)) {
+        document.getElementById('sciErrorMsg').innerText = "Please enter science marks between 0 - 100"
+    }
+    else {
+        document.getElementById('sciErrorMsg').innerText = ""
+    }
+
+    if (!markRegex.test(document.getElementById('social').value)) {
+        document.getElementById('socErrorMsg').innerText = "Please enter social marks between 0 - 100"
+    }
+    else {
+        document.getElementById('socErrorMsg').innerText = ""
     }
 
     if (
@@ -96,13 +128,7 @@ const vaidateInputs = () => {
 
 
     } else {
-        document.getElementById('socErrorMsg').innerText = ""
-        document.getElementById('sciErrorMsg').innerText = ""
-        document.getElementById('mathErrorMsg').innerText = ""
-        document.getElementById('engErrorMsg').innerText = ""
-        document.getElementById('lanErrorMsg').innerText = ""
-        document.getElementById('emailErrorMsg').innerText = ""
-        document.getElementById('fullnameErrorMsg').innerText = ""
+
         console.log('check else');
         return false
     }
