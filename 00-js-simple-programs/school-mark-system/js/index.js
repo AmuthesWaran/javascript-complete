@@ -133,5 +133,14 @@ const vaidateInputs = () => {
         return false
     }
 
+}
+
+const calculateTotal = (marks) => {
+
+    return marks.language + marks.english + marks.math + marks.science + marks.social
 
 }
+
+const average = (marks) => {
+    return (marks.language + marks.english + marks.math + marks.science + marks.social) / 5
+} 
