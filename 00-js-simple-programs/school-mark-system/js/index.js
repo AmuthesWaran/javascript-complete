@@ -46,6 +46,42 @@ const calc = (event) => {
 const refresh = () => {
 
 
+    let tableRender = document.getElementById('tableRender')
+
+    // while (tableRender.hasChildNodes()) {
+    //     tableRender.firstChild.remove()
+    // }
+
+    tableRender.innerHTML = `
+    <tr>
+    <th>Student ID</th>
+    <th>Student Name</th>
+    <th>Lang</th>
+    <th>Eng</th>
+    <th>Math</th>
+    <th>Sci</th>
+    <th>Soc</th>
+  </tr>
+    `
+
+
+    for (let i = 0; i < allStudents.length; i++) {
+        let row = document.createElement('tr')
+        row.innerHTML = `
+        <tr>
+            <td>${allStudents[i].id}</td>
+            <td>${allStudents[i].fullname}</td>
+            <td>${allStudents[i].marks.language}</td>
+            <td>${allStudents[i].marks.english}</td>
+            <td>${allStudents[i].marks.math}</td>
+            <td>${allStudents[i].marks.science}</td>
+            <td>${allStudents[i].marks.social}</td>
+        </tr>
+        `
+        tableRender.appendChild(row)
+    }
+
+
 
 }
 
