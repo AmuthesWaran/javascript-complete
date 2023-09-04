@@ -39,6 +39,17 @@ const calc = (event) => {
 
 
         console.log(studentData);
+        refresh()
+        document.getElementById('sid').value = ""
+        document.getElementById('fullname').value = ""
+        document.getElementById('emailAddress').value = ""
+        document.getElementById('dateOfBirth').value = ""
+        document.getElementById('language').value = ""
+        document.getElementById('english').value = ""
+        document.getElementById('math').value = ""
+        document.getElementById('science').value = ""
+        document.getElementById('social').value = ""
+
     }
 
 }
@@ -61,6 +72,8 @@ const refresh = () => {
     <th>Math</th>
     <th>Sci</th>
     <th>Soc</th>
+    <th>Total</th>
+    <th>Percentage</th>
   </tr>
     `
 
@@ -76,6 +89,8 @@ const refresh = () => {
             <td>${allStudents[i].marks.math}</td>
             <td>${allStudents[i].marks.science}</td>
             <td>${allStudents[i].marks.social}</td>
+            <td>${calculateTotal(allStudents[i].marks)}</td>
+            <td>${average(allStudents[i].marks)}</td>
         </tr>
         `
         tableRender.appendChild(row)
