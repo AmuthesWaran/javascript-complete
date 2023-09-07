@@ -1,0 +1,30 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "fullname": "Ammu",
+      "email": "ammu@gmail.com",
+      "dateOfBirth": "2023-03-01",
+      "marks": {
+        "language": 83,
+        "english": 89,
+        "math": 100,
+        "science": 95,
+        "social": 91
+      }
+    },
+    {
+      "id": 2,
+      "fullname": "Aravind",
+      "email": "aravind@gmail.com",
+      "dateOfBirth": "2023-06-07",
+      "marks": {
+        "language": 75,
+        "english": 85,
+        "math": 99,
+        "science": 100,
+        "social": 89
+      }
+    }
+  ]
+}

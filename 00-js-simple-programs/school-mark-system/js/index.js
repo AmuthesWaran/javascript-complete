@@ -1,4 +1,13 @@
+
+axios.get('http://localhost:3000/students')
+    .then((res) => {
+        allStudents.push(...res.data)
+        console.log(res.data)
+    })
+
 const allStudents = []
+
+
 
 const calc = (event) => {
     event.preventDefault()
@@ -34,7 +43,10 @@ const calc = (event) => {
             }
         }
 
-        allStudents.push(studentData)
+        axios.post(`http://localhost:3000/students`, studentData)
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err))
+        // allStudents.push(studentData)
         document.getElementById('successMsg').innerText = "Successfully Updated"
 
 
