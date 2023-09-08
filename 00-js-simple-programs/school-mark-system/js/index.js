@@ -9,8 +9,8 @@ const allStudents = []
 
 
 
-const calc = (event) => {
-    event.preventDefault()
+const calc = () => {
+    // event.preventDefault()
 
 
 
@@ -45,13 +45,19 @@ const calc = (event) => {
 
         axios.post(`http://localhost:3000/students`, studentData)
             .then((res) => console.log(res))
-            .catch((err) => console.log(err))
+            .catch((err) => {
+                if (err.message == `Network Error`) {
+                    document.getElementById('failMsg').innerText = "Please Connect to JSON Server"
+
+                }
+                // else if ()
+            })
         // allStudents.push(studentData)
         document.getElementById('successMsg').innerText = "Successfully Updated"
 
 
         console.log(studentData);
-        refresh()
+
         document.getElementById('sid').value = ""
         document.getElementById('fullname').value = ""
         document.getElementById('emailAddress').value = ""
@@ -61,6 +67,7 @@ const calc = (event) => {
         document.getElementById('math').value = ""
         document.getElementById('science').value = ""
         document.getElementById('social').value = ""
+        // refresh()
 
     }
 
@@ -86,6 +93,7 @@ const refresh = () => {
     <th>Soc</th>
     <th>Total</th>
     <th>Percentage</th>
+    <th>Result</th>
   </tr>
     `
 
@@ -103,6 +111,7 @@ const refresh = () => {
             <td>${allStudents[i].marks.social}</td>
             <td>${calculateTotal(allStudents[i].marks)}</td>
             <td>${average(allStudents[i].marks)}</td>
+            <td>${calcResult(allStudents[i].marks)}</td>
         </tr>
         `
         tableRender.appendChild(row)
@@ -206,4 +215,14 @@ const calculateTotal = (marks) => {
 
 const average = (marks) => {
     return (marks.language + marks.english + marks.math + marks.science + marks.social) / 5
-} 
+}
+
+const calcResult = (marks) => {
+
+    const passMark = 35
+
+    if (marks.language >= passMark && marks.english >= passMark && marks.math >= passMark && marks.science >= passMark && marks.social >= passMark)
+        return "Pass"
+    else
+        return "Fail"
+}

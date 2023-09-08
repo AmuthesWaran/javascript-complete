@@ -25,6 +25,110 @@
         "science": 100,
         "social": 89
       }
+    },
+    {
+      "id": 3,
+      "fullname": "Krish",
+      "email": "krish@gmail.com",
+      "dateOfBirth": "2023-09-06",
+      "marks": {
+        "language": 100,
+        "english": 100,
+        "math": 100,
+        "science": 100,
+        "social": 100
+      }
+    },
+    {
+      "id": 5,
+      "fullname": "asf",
+      "email": "asfs@gmail.com",
+      "dateOfBirth": "2023-05-10",
+      "marks": {
+        "language": 100,
+        "english": 100,
+        "math": 100,
+        "science": 100,
+        "social": 100
+      }
+    },
+    {
+      "id": 6,
+      "fullname": "fed",
+      "email": "afef@gmail.com",
+      "dateOfBirth": "2023-09-07",
+      "marks": {
+        "language": 100,
+        "english": 100,
+        "math": 100,
+        "science": 100,
+        "social": 100
+      }
+    },
+    {
+      "id": 7,
+      "fullname": "asfas",
+      "email": "sfas@gmail.com",
+      "dateOfBirth": "2023-09-09",
+      "marks": {
+        "language": 100,
+        "english": 100,
+        "math": 100,
+        "science": 100,
+        "social": 100
+      }
+    },
+    {
+      "id": 8,
+      "fullname": "afaf",
+      "email": "asfas@gmail.com",
+      "dateOfBirth": "2023-09-07",
+      "marks": {
+        "language": 90,
+        "english": 90,
+        "math": 90,
+        "science": 90,
+        "social": 90
+      }
+    },
+    {
+      "id": 9,
+      "fullname": "jsfhj",
+      "email": "safhbj@gmail.com",
+      "dateOfBirth": "2023-09-07",
+      "marks": {
+        "language": 90,
+        "english": 87,
+        "math": 48,
+        "science": 98,
+        "social": 52
+      }
+    },
+    {
+      "id": 10,
+      "fullname": "asfa",
+      "email": "asfs@gmail.com",
+      "dateOfBirth": "2023-09-07",
+      "marks": {
+        "language": 90,
+        "english": 48,
+        "math": 75,
+        "science": 85,
+        "social": 41
+      }
+    },
+    {
+      "id": 11,
+      "fullname": "asfgahsd",
+      "email": "gdgs@fg.com",
+      "dateOfBirth": "2023-08-29",
+      "marks": {
+        "language": 74,
+        "english": 10,
+        "math": 14,
+        "science": 85,
+        "social": 96
+      }
     }
   ]
 }
