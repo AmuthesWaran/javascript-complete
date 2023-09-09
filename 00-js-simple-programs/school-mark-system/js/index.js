@@ -99,8 +99,30 @@ const refresh = () => {
 
 
     for (let i = 0; i < allStudents.length; i++) {
+
         let row = document.createElement('tr')
-        row.innerHTML = `
+
+        if (calcResult(allStudents[i].marks) === 'Fail') {
+
+            row.innerHTML = `
+        <tr>
+            <td bgcolor="red">${allStudents[i].id}</td>
+            <td bgcolor="red">${allStudents[i].fullname}</td>
+            <td bgcolor="red">${allStudents[i].marks.language}</td>
+            <td bgcolor="red">${allStudents[i].marks.english}</td>
+            <td bgcolor="red">${allStudents[i].marks.math}</td>
+            <td bgcolor="red">${allStudents[i].marks.science}</td>
+            <td bgcolor="red">${allStudents[i].marks.social}</td>
+            <td bgcolor="red">${calculateTotal(allStudents[i].marks)}</td>
+            <td bgcolor="red">${average(allStudents[i].marks)}</td>
+            <td bgcolor="red">${calcResult(allStudents[i].marks)}</td>
+        </tr>
+        `
+            tableRender.appendChild(row)
+        }
+        else {
+
+            row.innerHTML = `
         <tr>
             <td>${allStudents[i].id}</td>
             <td>${allStudents[i].fullname}</td>
@@ -114,7 +136,8 @@ const refresh = () => {
             <td>${calcResult(allStudents[i].marks)}</td>
         </tr>
         `
-        tableRender.appendChild(row)
+            tableRender.appendChild(row)
+        }
     }
 
 
