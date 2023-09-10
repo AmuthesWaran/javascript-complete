@@ -2,7 +2,7 @@
 axios.get('http://localhost:3000/students')
     .then((res) => {
         allStudents.push(...res.data)
-        console.log(res.data)
+        // console.log(res.data)
     })
 
 const allStudents = []
@@ -10,13 +10,13 @@ const allStudents = []
 
 
 const calc = () => {
-    // event.preventDefault()
+    // e.preventDefault();
 
 
 
     if (!vaidateInputs()) {
 
-        console.log('Invalid Inputs');
+        // console.log('Invalid Inputs');
         document.getElementById('successMsg').innerText = ""
 
 
@@ -44,7 +44,10 @@ const calc = () => {
         }
 
         axios.post(`http://localhost:3000/students`, studentData)
-            .then((res) => console.log(res))
+            .then((res) => {
+
+                console.log(res)
+            })
             .catch((err) => {
                 if (err.message == `Network Error`) {
                     document.getElementById('failMsg').innerText = "Please Connect to JSON Server"
@@ -218,13 +221,13 @@ const vaidateInputs = () => {
         markRegex.test(document.getElementById('science').value) &&
         markRegex.test(document.getElementById('social').value)
     ) {
-        console.log('check if');
+        // console.log('check if');
         return true
 
 
     } else {
 
-        console.log('check else');
+        // console.log('check else');
         return false
     }
 

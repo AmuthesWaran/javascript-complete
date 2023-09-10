@@ -45,11 +45,11 @@
       "email": "asfs@gmail.com",
       "dateOfBirth": "2023-05-10",
       "marks": {
-        "language": 100,
-        "english": 100,
-        "math": 100,
-        "science": 100,
-        "social": 100
+        "language": 55,
+        "english": 42,
+        "math": 30,
+        "science": 12,
+        "social": 37
       }
     },
     {
@@ -111,7 +111,7 @@
       "dateOfBirth": "2023-09-07",
       "marks": {
         "language": 90,
-        "english": 48,
+        "english": 35,
         "math": 75,
         "science": 85,
         "social": 41
@@ -128,6 +128,45 @@
         "math": 14,
         "science": 85,
         "social": 96
+      }
+    },
+    {
+      "id": 12,
+      "fullname": "Siri",
+      "email": "siri@outlook.com",
+      "dateOfBirth": "2023-03-01",
+      "marks": {
+        "language": 85,
+        "english": 96,
+        "math": 91,
+        "science": 67,
+        "social": 85
+      }
+    },
+    {
+      "id": 13,
+      "fullname": "Test",
+      "email": "testing@gmail.com",
+      "dateOfBirth": "2023-04-05",
+      "marks": {
+        "language": 100,
+        "english": 68,
+        "math": 97,
+        "science": 52,
+        "social": 63
+      }
+    },
+    {
+      "id": 14,
+      "fullname": "test",
+      "email": "test2@gmail.com",
+      "dateOfBirth": "2023-09-06",
+      "marks": {
+        "language": 100,
+        "english": 98,
+        "math": 86,
+        "science": 75,
+        "social": 68
       }
     }
   ]
